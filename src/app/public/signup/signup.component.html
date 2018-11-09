@@ -3,21 +3,28 @@
     <div class="container">
       <div class="col-md-4 ml-auto mr-auto">
         <div class="card card-login card-plain">
-          <!-- <form class="form" method="" action=""> -->
+          <form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
             <div class="card-header text-center">
-                <div class="logo-container">
-              <img src="assets/img/favicon.png" alt="">
-            </div>
+              <div class="logo-container">
+                <img src="assets/img/favicon.png" alt="">
+              </div>
 
             </div>
             <div class="card-body">
+
+              <div *ngIf="(Username1.dirty || Username1.touched) && Username1.errors  ">
+                <div class="alert alert-danger" *ngIf="Username1.errors.required">Username is required</div>
+              
+              </div>
+
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="now-ui-icons users_circle-08"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="form-control" placeholder="Username" placeholder="Username" aria-describedby=""
+                  name="Username" [(ngModel)]="publicService.user.Username" required #Username1="ngModel">
               </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
@@ -25,45 +32,52 @@
                     <i class="now-ui-icons text_caps-small"></i>
                   </span>
                 </div>
-                <input type="password" placeholder="Password" class="form-control" />
+                <input type="password" placeholder="Password" class="form-control" [(ngModel)]="publicService.user.Password"
+                  aria-describedby="" required minlength="4" #Password="ngModel" name="Password" />
               </div>
-      <div class="input-group no-border input-lg">
+              <div class="alert alert-danger" *ngIf="(ConfirmPassword.dirty || ConfirmPassword.touched) && Password.value != ConfirmPassword.value">
+                Confirm password not match
+              </div>
+              <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="now-ui-icons text_caps-small"></i>
                   </span>
                 </div>
-                <input type="password" placeholder="Confirm Password" class="form-control" />
+                <input type="password" placeholder="Confirm Password" class="form-control" [(ngModel)]="publicService.user.ConfirmPassword"
+                  aria-describedby="" required #ConfirmPassword="ngModel" name="ConfirmPassword" minlength="4" />
               </div>
-      <div class="input-group no-border input-lg">
+              <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="now-ui-icons text_caps-small"></i>
                   </span>
                 </div>
-                <input type="password" placeholder="Email" class="form-control" />
+                <input type="text" placeholder="Email" class="form-control" aria-describedby="" name="Email"
+                  [(ngModel)]="publicService.user.Email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
               </div>
             </div>
             <div class="card-footer text-center">
-              <a href="/auth/login" class="btn btn-round btn-lg btn-block">Signup</a>
-          <!-- </form> -->
-          </div>
-    <div class="card-footer text-center">
-              <a href="/auth/login" class="btn btn-round btn-lg btn-block">Login</a>
-          </div>
+              <button type="submit" [disabled]="f.invalid" class="btn btn-round btn-lg btn-block">Signup</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          <a href="/auth/login" class="btn btn-round btn-lg btn-block">Login</a>
         </div>
       </div>
     </div>
   </div>
-  <footer class="footer">
-    <div class="container">
-      <div class="copyright" id="copyright">
-        &copy;
-        <script>
-          document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-        </script>, Powered by
-        <a href="#" target="_blank">Aaram Gold</a>.
-      </div>
+  </div>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="copyright" id="copyright">
+      &copy;
+      <script>
+        document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+      </script>, Powered by
+      <a href="#" target="_blank">Aaram Gold</a>.
     </div>
-  </footer>
-</div>
+  </div>
+</footer> -->

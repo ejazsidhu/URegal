@@ -11,9 +11,9 @@
 
             </div>
             <div class="card-body">
-              <div *ngIf="email.errors && (email.dirty || email.touched)">
-                <div class="alert alert-danger" *ngIf="email.errors.required">Email is required</div>
-                <div class="alert alert-danger" *ngIf="email.errors.pattern">Email must contain at least the @ and a .
+              <div *ngIf="Username.errors && (Username.dirty || Username.touched)">
+                <div class="alert alert-danger" *ngIf="Username.errors.required">Email is required</div>
+                <div class="alert alert-danger" *ngIf="Username.errors.pattern">Email must contain at least the @ and a .
                   (dot) character</div>
               </div>
               <div class="input-group no-border input-lg">
@@ -23,7 +23,7 @@
                   </span>
                 </div>
                 <input type="text" class="form-control" placeholder="Username" placeholder="Username" aria-describedby=""
-                  name="Username" [(ngModel)]="publicService.user.Username" required #email="ngModel">
+                  name="Username" [(ngModel)]="publicService.user.Username" required #Username="ngModel">
               </div>
 
               <div *ngIf="password.errors && (password.dirty || password.touched)">
