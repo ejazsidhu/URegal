@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HomeContentComponent } from './home-content/home-content.component';
@@ -6,7 +6,11 @@ import { HomeContentComponent } from './home-content/home-content.component';
 const routes: Routes = [
   {
     path:'',
-    component:HomeContentComponent
+    component:HomeComponent,
+    children:[{
+      path: '',
+      component: HomeContentComponent,
+    }]
   }
 ];
 
