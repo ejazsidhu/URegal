@@ -5,19 +5,30 @@
         <div class="card card-login card-plain">
           <form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
             <div class="card-header text-center">
-                <div class="logo-container">
-              <img src="assets/img/favicon.png" alt="">
-            </div>
+              <div class="logo-container">
+                <img src="assets/img/favicon.png" alt="">
+              </div>
 
             </div>
             <div class="card-body">
+              <div *ngIf="email.errors && (email.dirty || email.touched)">
+                <div class="alert alert-danger" *ngIf="email.errors.required">Email is required</div>
+                <div class="alert alert-danger" *ngIf="email.errors.pattern">Email must contain at least the @ and a .
+                  (dot) character</div>
+              </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="now-ui-icons users_circle-08"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="form-control" placeholder="Username" placeholder="Username" aria-describedby=""
+                  name="Username" [(ngModel)]="publicService.user.Username" required #email="ngModel">
+              </div>
+
+              <div *ngIf="password.errors && (password.dirty || password.touched)">
+                <div class="alert alert-danger" *ngIf="password.errors.required">Password is required</div>
+                <div class="alert alert-danger" *ngIf="password.errors.minlength">Password must be 4 characters long.</div>
               </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
@@ -25,29 +36,31 @@
                     <i class="now-ui-icons text_caps-small"></i>
                   </span>
                 </div>
-                <input type="password" placeholder="Password" class="form-control" />
+                <input type="password" placeholder="Password" class="form-control" [(ngModel)]="publicService.user.Password"
+                  aria-describedby="" required minlength="4" #password="ngModel" name="Password" />
               </div>
             </div>
             <div class="card-footer text-center">
-              <a href="dashboard.html" class="btn btn-round btn-lg btn-block">Login</a>
-          <!-- </form> -->
-          </div>
-    <div class="card-footer text-center">
-              <a href="/auth/signup" class="btn btn-round btn-lg btn-block">Signup</a>
-          </div>
+              <button type="submit" class="btn btn-round btn-lg btn-block" [disabled]="f.invalid">Login</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          <a href="/auth/signup" class="btn btn-round btn-lg btn-block">Signup</a>
         </div>
       </div>
     </div>
   </div>
-  <footer class="footer">
-    <div class="container">
-      <div class="copyright" id="copyright">
-        &copy;
-        <script>
-          document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-        </script>, Powered by
-        <a href="#" target="_blank">Aaram Gold</a>.
-      </div>
-    </div>
-  </footer>
 </div>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="copyright" id="copyright">
+      &copy;
+      <script>
+        document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+      </script>, Powered by
+      <a href="#" target="_blank">Aaram Gold</a>.
+    </div>
+  </div>
+</footer> -->
