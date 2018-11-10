@@ -40,11 +40,11 @@ const routes: Routes = [
   ],
 
   }
-  ,{
-    path:'**',
-    component:HomeContentComponent,
+  // ,{
+  //   path:'**',
+  //   component:HomeContentComponent,
    
-  }
+  // }
 ];
 
 @NgModule({
