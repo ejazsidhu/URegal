@@ -12,12 +12,13 @@ import { MembersComponent } from './network/members/members.component';
 import { RefrealComponent } from './network/refreal/refreal.component';
 import { NetworkTreeComponent } from './network/network-tree/network-tree.component';
 import { TeamTreeComponent } from './network/team-tree/team-tree.component';
+import { NetworkComponent } from './network/network.component';
 
 @NgModule({
   imports: [
     CommonModule,
     PrivateRoutingModule
   ],
-  declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent]
+  declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent]
 })
 export class PrivateModule { }
