@@ -13,18 +13,19 @@ import { RefrealComponent } from './network/refreal/refreal.component';
 import { NetworkTreeComponent } from './network/network-tree/network-tree.component';
 import { TeamTreeComponent } from './network/team-tree/team-tree.component';
 import { NetworkComponent } from './network/network.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {MenubarModule} from 'primeng/menubar';
 // import { MenuItem} from 'primeng/api';
-
+import {DialogModule} from 'primeng/dialog';
+import {TreeModule} from 'primeng/tree';
 @NgModule({
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     PrivateRoutingModule,
     MenubarModule,
-    
-  ],
+    DialogModule,
+    TreeModule,
+    ],
   declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent]
 })
 export class PrivateModule { }

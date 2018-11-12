@@ -31,7 +31,7 @@
             </a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link"  routerLink="/home">
+            <a class="nav-link" (click)="propop()"  routerLink="/home">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -75,19 +75,19 @@
             </ul>
           </li>
           <li class="nav-item " >
-            <a class="nav-link"  routerLink="/home/wallet">
+            <a class="nav-link" (click)="vmail()">
               <i class="material-icons">fingerprint</i>
               <p>Wallet</p>
             </a>
           </li>
 		   <li class="nav-item " >
-            <a class="nav-link"  routerLink="/home/codes">
+            <a class="nav-link"  (click)="vmail()" >
               <i class="material-icons">code</i>
               <p>Regal Codes</p>
             </a>
           </li>
 		  <li class="nav-item " >
-            <a class="nav-link"  routerLink="/home">
+            <a class="nav-link" (click)="vmail()"  routerLink="/home">
               <i class="material-icons">credit_card</i>
               <p>Visa Card</p>
             </a>
@@ -99,13 +99,13 @@
             </a>
           </li>
 		  <li class="nav-item " >
-            <a class="nav-link"  routerLink="/home">
+            <a class="nav-link" (click)="vmail()">
               <i class="material-icons">contact_support</i>
               <p>Contract</p>
             </a>
           </li>
 		  <li class="nav-item " >
-            <a class="nav-link"  routerLink="/home">
+            <a class="nav-link"  (click)="vmail()">
               <i class="material-icons">build</i>
               <p>Tools</p>
             </a>
@@ -200,3 +200,12 @@
             </div>
             </div>
 </div>
+<p-dialog header="Verify Your Email" [(visible)]="verifymail" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70" 
+    [maximizable]="false" [baseZIndex]="10000">
+    <div class="form-group"><label class="bmd-label-floating">Email Address</label><input class="form-control" disabled="" type="text" value="mail@mail.com" style="color:grey;"></div>
+    <div class="text-center"><button class="btn  btn-round" type="submit">Verify <div class="ripple-container"></div><div class="ripple-container"></div></button></div>
+</p-dialog>
+<p-dialog header="Promotion" [(visible)]="promotion" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70" 
+    [maximizable]="false" [baseZIndex]="10000">
+    <img class="img-fluid" src="assets/img/coins.jpg">
+</p-dialog>
