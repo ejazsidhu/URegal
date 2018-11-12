@@ -11,3 +11,8 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+
+input.form-control{
+    color: white
+}
