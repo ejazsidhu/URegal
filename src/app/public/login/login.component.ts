@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       console.log('obsubmit called',this.form.value)
-      if(this.form.value.Username=='ejaz@gmail.com' && this.form.value.Password=="asdfg")
-      // this.router.navigate[('/home')];
+      if(this.form.value.Username=='aaram@gmail.com' && this.form.value.Password=="aaram")
+    
       this.router.navigateByUrl('/home');
     }
 
