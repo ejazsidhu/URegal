@@ -14,10 +14,15 @@ import { NetworkTreeComponent } from './network/network-tree/network-tree.compon
 import { TeamTreeComponent } from './network/team-tree/team-tree.component';
 import { NetworkComponent } from './network/network.component';
 
+import {MenubarModule} from 'primeng/menubar';
+// import { MenuItem} from 'primeng/api';
+
 @NgModule({
   imports: [
     CommonModule,
-    PrivateRoutingModule
+    PrivateRoutingModule,
+    MenubarModule,
+    
   ],
   declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent]
 })
