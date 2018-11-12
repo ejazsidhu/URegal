@@ -13,13 +13,14 @@ import { RefrealComponent } from './network/refreal/refreal.component';
 import { NetworkTreeComponent } from './network/network-tree/network-tree.component';
 import { TeamTreeComponent } from './network/team-tree/team-tree.component';
 import { NetworkComponent } from './network/network.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MenubarModule} from 'primeng/menubar';
 // import { MenuItem} from 'primeng/api';
 
 @NgModule({
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     PrivateRoutingModule,
     MenubarModule,
     
