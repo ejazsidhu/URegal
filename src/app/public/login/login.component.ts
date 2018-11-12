@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   @ViewChild("f") form: any;
-  constructor(public publicService: PublicService, private router: Router) {
+  constructor(public publicService: PublicService, public router: Router) {
 
     this.publicService.user = new User();
   }
@@ -29,11 +29,12 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       console.log('obsubmit called',this.form.value)
-
+      if(this.form.value.Username=='ejaz@gmail.com' && this.form.value.Password=="asdfg")
+      // this.router.navigate[('/home')];
+      this.router.navigateByUrl('/home');
     }
 
     // debugger
-    this.router.navigate[('signup')];
 
   }
 }
