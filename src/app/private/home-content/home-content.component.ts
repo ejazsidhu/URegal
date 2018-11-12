@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/components/common/menuitem';
 // import {MenuItem} from 'primeng/api';
+
 @Component({
   selector: 'app-home-content',
   templateUrl: './home-content.component.html',
@@ -8,6 +9,8 @@ import { MenuItem } from 'primeng/components/common/menuitem';
 })
 export class HomeContentComponent implements OnInit {
   items: MenuItem[];
+ 
+
   constructor() { }
 
   ngOnInit() {
