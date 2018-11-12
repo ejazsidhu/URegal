@@ -13,7 +13,13 @@ import { RegalCodesComponent } from './regal-codes/regal-codes.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 
 const routes: Routes = [
+  // {
+  //   path:'home',
+  //   component:HomeComponent
+  // },
   {
+
+
     path:'',
     component:HomeComponent,
     children:[{
