@@ -11,8 +11,31 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
-
-
+.sidebar[data-background-color="black"] .nav .nav-item i {
+    color: #ffea0d;
+}
+.data-widget-yellow , .navbar.navbar-transparent{
+    background-color: #ffea0d !important;
+}
+.data-widget-black{
+    background-color: #000 !important;
+}
 input.form-control{
     color: white
+}
+.btn , .btn-round{
+    background: #FFEA0D;
+    color: black;
+}
+.btn , .btn-round:active{
+    background: #FFEA0D;
+    color: black;
+}
+.btn , .btn-round:hover{
+    background: rgba(255, 234, 0, 0.863);
+    color: black;
+}
+.btn , .btn-round:focus{
+    background: rgba(255, 234, 0, 0.863);
+    color: black;
 }
