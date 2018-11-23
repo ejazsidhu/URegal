@@ -29,11 +29,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log('obsubmit called', this.form.value)
+      // console.log('obsubmit called', this.form.value)
       // if(this.form.value.Username=='aaram@gmail.com' && this.form.value.Password=="aaram")
       this.authService.login(this.form.value.Username, this.form.value.Password).subscribe(data => {
         localStorage.setItem('user', data);
-        console.log(data)
+        let token_type = data.token_type;
+        let access_token = data.access_token;
+        let tokenKey = "" + token_type + " " + access_token + "";
+        localStorage.setItem('tokenKey', tokenKey);
+        // console.log(data)
 
         this.router.navigateByUrl('/home');
 

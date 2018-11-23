@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http,Headers } from '@angular/http';
 import { HttpClient} from '@angular/common/http'
 
 @Injectable({
@@ -19,6 +19,26 @@ export class GeneralService {
 
   public urlBuilder(url) {
     return this.ip + "/" + url;
+  }
 
+  headerCTJson() {
+    let header = new Headers({ 'content-type': 'application/json' });
+    return header;
+  }
+  headerCTJsontoken(token) {
+    let header = new Headers({ 'content-type': 'application/json' });
+    header.append("Authorization", token);
+    return header;
+  }
+
+  headerTokenWithoutContenttype(token) {
+    let header = new Headers({ "Authorization": token });
+    // header.append("Authorization", token);
+    return header;
+  }
+  headerCTUrlencodedtoken(token) {
+    let header = new Headers({ 'content-type': 'application/x-www-form-urlencoded' });
+    header.append("Authorization", token);
+    return header;
   }
 }
