@@ -18,6 +18,7 @@ import {MenubarModule} from 'primeng/menubar';
 // import { MenuItem} from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
 import {TreeModule} from 'primeng/tree';
+import { VisaCardComponent } from './visa-card/visa-card.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,6 +27,6 @@ import {TreeModule} from 'primeng/tree';
     DialogModule,
     TreeModule,
     ],
-  declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent]
+  declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent, VisaCardComponent]
 })
 export class PrivateModule { }
