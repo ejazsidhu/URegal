@@ -11,6 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { RegalCodesComponent } from './regal-codes/regal-codes.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { VisaCardComponent } from './visa-card/visa-card.component';
 
 const routes: Routes = [
   // {
@@ -27,6 +28,7 @@ const routes: Routes = [
       component: HomeContentComponent,
     },
     {path:'settings',component:SettingsComponent},
+    {path:'visa-card',component:VisaCardComponent},
     {path:'wallet', component:WalletComponent},
     {path:'codes',component:RegalCodesComponent},
     {path:'transactions',component:TransactionsComponent}
