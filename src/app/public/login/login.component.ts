@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         // console.log(data)
         this.loading=false
 
-        // this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home');
 
       }, error => {
 
@@ -57,6 +57,11 @@ export class LoginComponent implements OnInit {
         this.loading=false;
         let e=JSON.parse(error._body);
         this.message=e.error_description
+
+        setTimeout(() => {
+          this.message='';
+          
+        }, 3000);
         
       });
 
