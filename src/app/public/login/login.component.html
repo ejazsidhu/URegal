@@ -1,7 +1,9 @@
 <div class="wrapper" style="background:black;margin-top:-30px">
-  <div class="content" >
+  <div class="content">
     <div class="container">
       <div class="col-md-4 ml-auto mr-auto">
+
+
         <div class="card card-login card-plain text-center">
           <form novalidate #f="ngForm" (ngSubmit)="onSubmit()" style="margin-top:30%">
             <div class="card-header text-center">
@@ -11,6 +13,12 @@
 
             </div>
             <div class="card-body">
+
+
+              <div *ngIf="message.length>0" class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" (click)="setAlertOff()" aria-hidden="true">&times;</button>
+                <strong> {{message}}</strong>
+              </div>
               <div *ngIf="Username.errors && (Username.dirty || Username.touched)">
                 <div class="alert alert-danger" *ngIf="Username.errors.required">Email is required</div>
                 <div class="alert alert-danger" *ngIf="Username.errors.pattern">Email must contain at least the @ and a
@@ -43,12 +51,15 @@
             </div>
             <div class="card-footer" style="margin-top:15px">
               <!-- [disabled]="f.invalid" -->
-              <button type="submit" class="btn btn-round btn-lg btn-block" style="background:#D3B151"  [disabled]="f.invalid">Login</button>
-             
+              <button type="submit" class="btn btn-round btn-lg btn-block" style="background:#D3B151" [disabled]="f.invalid">
+                <i class="fa fa-spinner fa-spin" style="color:red" *ngIf="loading"></i>
+                Login</button>
+
+
             </div>
 
             <div class="card-footer pull-right">
-               <span style="color:white;margin-top:-18px;cursor: pointer;" routerLink="/auth/signup" >Register Now</span> 
+              <span style="color:white;margin-top:-18px;cursor: pointer;" routerLink="/auth/signup">Register Now</span>
 
             </div>
           </form>
