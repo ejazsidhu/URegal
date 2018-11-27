@@ -11,7 +11,17 @@ export class PrivateService {
   constructor(private http: Http, private gHttpService: GeneralService) { }
 
   getUsersTree() {
+  
+      let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
+      const option = new RequestOptions({ headers: httpOption });
+      var action = 'API/AccountAPI/getUserTreeLabel';
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.get(url, option).map(
+        response => response.json()
+      );
+    }
 
+    getUsersTreeRefrel() {
   
       let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
       const option = new RequestOptions({ headers: httpOption });
@@ -20,7 +30,5 @@ export class PrivateService {
       return this.http.get(url, option).map(
         response => response.json()
       );
-  
-
-  }
+    }
 }

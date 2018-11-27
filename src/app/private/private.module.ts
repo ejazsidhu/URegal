@@ -19,6 +19,7 @@ import {MenubarModule} from 'primeng/menubar';
 import {DialogModule} from 'primeng/dialog';
 import {TreeModule} from 'primeng/tree';
 import { VisaCardComponent } from './visa-card/visa-card.component';
+import { OrgChartModule } from 'ng2-org-chart';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,6 +27,8 @@ import { VisaCardComponent } from './visa-card/visa-card.component';
     MenubarModule,
     DialogModule,
     TreeModule,
+    OrgChartModule
+    
     ],
   declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent, VisaCardComponent]
 })

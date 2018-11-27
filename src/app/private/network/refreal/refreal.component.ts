@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IEmployee } from 'ng2-org-chart';
+import { PrivateService } from 'src/app/services/private.service';
 
 @Component({
   selector: 'app-refreal',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RefrealComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private privateService: PrivateService) { }
+showTree=false;
   ngOnInit() {
+    this.getTreeData();
   }
+
+  topEmployee: any ={}
+
+  getTreeData() {
+    this.privateService.getUsersTreeRefrel().subscribe(data => {
+      this.topEmployee = {};
+      this.topEmployee = data.ResponseData[0];
+      this.showTree=true;
+
+      console.log("tree refresl  data", this.topEmployee);
+
+    }, error => { });
+  }
+
 
 }

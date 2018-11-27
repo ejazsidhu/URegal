@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TreeNode } from 'primeng/primeng';
 import { PrivateService } from 'src/app/services/private.service';
+import { IEmployee } from 'ng2-org-chart';
 
 @Component({
   selector: 'app-network-tree',
@@ -9,51 +10,69 @@ import { PrivateService } from 'src/app/services/private.service';
 })
 export class NetworkTreeComponent implements OnInit {
   files: TreeNode[];
+  
   constructor(private privateSerive:PrivateService) { }
+
+//   topEmployee: IEmployee = {
+//     name: 'Janis Martin',
+//     designation: 'CEO',
+//     img: "assets/img/b.png",
+//     subordinates: [
+//         {
+//             name: 'Matthew Wikes',
+//             designation: 'VP',
+//             img: "assets/img/b.png",
+//             subordinates: [
+//                 // {
+//                 //     name: 'Tina Landry',
+//                 //     designation: 'Budget Analyst',
+//                 //     subordinates: []
+//                 // }
+
+//             ]
+//         },
+//         {
+//             name: 'Patricia Lyons',
+//             designation: 'VP',
+//             img: "assets/img/c.png",
+//             subordinates: [
+//                 {
+//                     name: 'Dylan Wilson',
+//                     designation: 'Web Manager',
+//                     img: "assets/img/b.png",
+//                     subordinates: []
+//                 },
+//                 {
+//                     name: 'Deb Curtis',
+//                     designation: 'Art Director',
+//                     img: "assets/img/c.png",
+//                     subordinates: [
+//                       {
+//                         name: 'Dylan Wilson',
+//                         designation: 'Web Manager',
+//                         img: "assets/img/b.png",
+//                         subordinates: []
+//                     },
+                   
+
+//                     ]
+//                 }
+//             ]
+//         },
+//         {
+//             name: 'Larry Phung',
+//             designation: 'VP',
+//             img: "./assets/img/a.png",
+//             subordinates: []
+//         }
+//     ]
+// };
 
   ngOnInit() {
 
+
     this.getTreeData();
     this.files = [
-      // {
-      //   label: 'Folder 1',
-      //   collapsedIcon: 'fa-folder',
-      //   expandedIcon: 'fa-folder-open',
-      //   children: [
-      //     {
-      //       label: 'child Folder 1',
-      //       collapsedIcon: 'fa-folder',
-      //       expandedIcon: 'fa-folder-open',
-      //       children: [
-      //         {
-      //           label: 'File 123',
-      //           icon: 'fa-file-o'
-      //         }
-      //       ]
-      //     },
-      //     {
-      //       label: 'childe Folder 2',
-      //       collapsedIcon: 'fa-folder',
-      //       expandedIcon: 'fa-folder-open',
-
-      //       children: [
-      //         {
-      //           label: 'File 12345',
-      //           icon: 'fa-file-o'
-      //         },
-      //         {
-      //           label: 'File 2',
-      //           icon: 'fa-file-o'
-      //         }
-      //       ]
-      //     }
-      //     // ,
-      //     // {
-      //     //   label: 'File 1',
-      //     //   icon: 'fa-file-o'
-      //     // }
-      //   ]
-      // }
       
     ];
   }
