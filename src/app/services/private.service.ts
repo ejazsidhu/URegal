@@ -31,4 +31,26 @@ export class PrivateService {
         response => response.json()
       );
     }
+
+    addMember(member){      
+      let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
+      const option = new RequestOptions({ headers: httpOption });
+      var action = 'API/AccountAPI/addUser';
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.post(url,member, option).map(
+        response => response.json()
+      );
+
+    }
+
+    getallUsers(){
+      let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
+      const option = new RequestOptions({ headers: httpOption });
+      var action = 'API/AccountAPI/geAlltUsers';
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.get(url,option).map(
+        response => response.json()
+      );
+
+    }
 }

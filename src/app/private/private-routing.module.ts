@@ -12,6 +12,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { RegalCodesComponent } from './regal-codes/regal-codes.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { VisaCardComponent } from './visa-card/visa-card.component';
+import { AddMemberComponent } from './network/add-member/add-member.component';
 
 const routes: Routes = [
   // {
@@ -39,6 +40,7 @@ const routes: Routes = [
       children:[
         {path:'',component:MembersComponent    },
         {path:'members',component:MembersComponent},
+        {path:'add-member',component:AddMemberComponent},
         {path:'network-tree',component:NetworkTreeComponent},
         {path:'team-tree',component:TeamTreeComponent},
         {path:'refreal',component:RefrealComponent},

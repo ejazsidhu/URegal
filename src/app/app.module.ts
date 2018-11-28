@@ -9,6 +9,7 @@ import { AuthService } from './services/auth.service';
 import { HttpModule } from '@angular/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +19,7 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpModule,
+    HttpModule
 
   ],
   providers: [GeneralService],

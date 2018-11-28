@@ -20,6 +20,8 @@ import {DialogModule} from 'primeng/dialog';
 import {TreeModule} from 'primeng/tree';
 import { VisaCardComponent } from './visa-card/visa-card.component';
 import { OrgChartModule } from 'ng2-org-chart';
+import { AddMemberComponent } from './network/add-member/add-member.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,9 +29,10 @@ import { OrgChartModule } from 'ng2-org-chart';
     MenubarModule,
     DialogModule,
     TreeModule,
-    OrgChartModule
+    OrgChartModule,
+    FormsModule
     
     ],
-  declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent, VisaCardComponent]
+  declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent, VisaCardComponent, AddMemberComponent]
 })
 export class PrivateModule { }
