@@ -47,9 +47,10 @@ export class LoginComponent implements OnInit {
         let tokenKey = "" + token_type + " " + access_token + "";
         localStorage.setItem('tokenKey', tokenKey);
         // console.log(data)
-        this.loading=false
 
         this.router.navigateByUrl('/home');
+        this.loading=false
+
 
       }, error => {
 

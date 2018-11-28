@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <button class="btn btn-primary" [routerLink]="['add-member']" >
+    <button class="btn btn-primary" [routerLink]="['add-member']">
       Add Member
     </button>
   </div>
@@ -19,37 +19,45 @@
               <tr>
                 <th>Sr.#</th>
                 <th>
-                ID
-              </th>
-              <th>
-                Name
-              </th>
-              <th>
-                Email
-              </th>
-             
-              <th>
-                Initial balance 
-              </th>
-            </tr></thead>
+                  ID
+                </th>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Email
+                </th>
+
+                <th>
+                  Initial balance
+                </th>
+                <th>Profit</th>
+              </tr>
+            </thead>
             <tbody>
               <tr *ngFor="let user of users;let i=index">
+                <!-- {{user |json}} -->
                 <td>
                   {{i+1}}
                 </td>
                 <td>{{user.id}}</td>
                 <td>
-                  {{user.dislpyaName}}
+                  {{user.displayName}}
                 </td>
-                
+
                 <td>
                   {{user.email}}
                 </td>
                 <td class="text-primary">
-                  {{user.business | number}}-PKR
+                  {{user.initialBalance | number}} /-PKR
+                </td>
+                <td class="text-primary">
+
+                  {{user.porfit | number}} /-PKR
+
                 </td>
               </tr>
-              
+
             </tbody>
           </table>
         </div>
