@@ -1,1 +1,8 @@
-<ng2-org-chart *ngIf="showTree"  [topEmployee]="topEmployee"></ng2-org-chart>
+<button class="btn btn-primary" (click)="addmem()">
+    Add Member
+  </button>
+<ng2-org-chart *ngIf="showTree"  [topEmployee]="topEmployee" ></ng2-org-chart>
+<p-dialog header="Add Member" [(visible)]="addmember" [modal]="true" [responsive]="true" [width]="850" [minWidth]="200" [minY]="70" 
+    [maximizable]="false" [baseZIndex]="10000">
+    <app-add-member></app-add-member>
+</p-dialog>

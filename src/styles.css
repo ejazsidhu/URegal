@@ -39,3 +39,9 @@ input.form-control{
     background: rgba(255, 234, 0, 0.863);
     color: black;
 }
+oc-employee{
+    margin: 0 1px !important;
+}
+.form-control{
+    color:black
+}

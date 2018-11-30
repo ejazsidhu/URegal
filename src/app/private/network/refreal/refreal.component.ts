@@ -11,12 +11,14 @@ export class RefrealComponent implements OnInit {
 
   constructor(private privateService: PrivateService) { }
 showTree=false;
+addmember:boolean = false;
   ngOnInit() {
     this.getTreeData();
   }
-
   topEmployee: any ={}
-
+  addmem(){
+    this.addmember = true;
+  }
   getTreeData() {
     this.privateService.getUsersTreeRefrel().subscribe(data => {
       this.topEmployee = {};
