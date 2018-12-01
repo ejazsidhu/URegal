@@ -1,0 +1,7 @@
+::ng-deep .pi-caret-right::before {
+    content: "\e90d";
+  }
+  
+  ::ng-deep .pi-caret-down::before {
+    content: "\e90f";
+  }
