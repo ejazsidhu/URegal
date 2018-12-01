@@ -1,15 +1,24 @@
 <div class="row justify-content-center text-center">
     <div class="col-12">
-      <img src="assets/img/1.png" height="200px" width="350px">
+      <img src="assets/img/1.png" height="200px" width="350px" (click)="cardperfect()">
     </div>
     <div class="col-12">
-        <img src="assets/img/2.png" height="200px" width="350px">
+        <img src="assets/img/2.png" height="200px" width="350px" (click)="cardgold()">
       </div>
   <div class="w-100"></div>
       <div class="col-12">
-          <img src="assets/img/3.png" height="200px" width="350px">
+          <img src="assets/img/3.png" height="200px" width="350px" (click)="cardskrill()">
       </div>
-      <div class="col-12">
-          <img src="assets/img/4.png" height="200px" width="350px">
-        </div>
 </div>
+<p-dialog  [(visible)]="card1" [modal]="true" [responsive]="true" [width]="850" [minWidth]="200" [minY]="70" 
+    [maximizable]="false" [baseZIndex]="10000">
+    <div class="text-center"><img src="assets/img/1.png" height="500px" width="750px"></div>
+</p-dialog>
+<p-dialog  [(visible)]="card2" [modal]="true" [responsive]="true" [width]="850" [minWidth]="200" [minY]="70" 
+    [maximizable]="false" [baseZIndex]="10000">
+    <div class="text-center"><img src="assets/img/2.png" height="500px" width="750px"></div>
+</p-dialog>
+<p-dialog  [(visible)]="card3" [modal]="true" [responsive]="true" [width]="850" [minWidth]="200" [minY]="70" 
+    [maximizable]="false" [baseZIndex]="10000">
+    <div class="text-center"><img src="assets/img/3.png" height="500px" width="750px"></div>
+</p-dialog>
