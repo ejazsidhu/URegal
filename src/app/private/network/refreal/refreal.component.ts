@@ -8,19 +8,23 @@ import { PrivateService } from 'src/app/services/private.service';
   styleUrls: ['./refreal.component.css']
 })
 export class RefrealComponent implements OnInit {
+  userId: any;
 
   constructor(private privateService: PrivateService) { }
 showTree=false;
 addmember:boolean = false;
   ngOnInit() {
-    this.getTreeData();
+
+    this.userId = JSON.parse(localStorage.getItem('user')).userId;
+    this.getTreeData(this.userId);
+  
   }
   topEmployee: any ={}
   addmem(){
     this.addmember = true;
   }
-  getTreeData() {
-    this.privateService.getUsersTreeRefrel().subscribe(data => {
+  getTreeData(userId) {
+    this.privateService.getUsersTreeRefrel(userId).subscribe(data => {
       this.topEmployee = {};
       this.topEmployee = data.ResponseData[0];
       this.showTree=true;

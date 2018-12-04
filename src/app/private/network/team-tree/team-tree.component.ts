@@ -8,11 +8,13 @@ import { PrivateService } from 'src/app/services/private.service';
 })
 export class TeamTreeComponent implements OnInit {
   files: TreeNode[];
+  userId: any;
   constructor(private privateSerive:PrivateService) { }
 
   ngOnInit() {
 
-    this.getTreeData();
+    this.userId = JSON.parse(localStorage.getItem('user')).userId;
+    this.getTreeData(this.userId);
     this.files = [
       // {
       //   label: 'Folder 1',
@@ -58,8 +60,8 @@ export class TeamTreeComponent implements OnInit {
   }
 
 
-  getTreeData(){
-    this.privateSerive.getUsersTree().subscribe(data=>{
+  getTreeData(userId){
+    this.privateSerive.getUsersTree(userId).subscribe(data=>{
       console.log("tree data",data)
       this.files=data.ResponseData;
     },error=>{});

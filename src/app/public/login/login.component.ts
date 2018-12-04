@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       // console.log('obsubmit called', this.form.value)
       // if(this.form.value.Username=='aaram@gmail.com' && this.form.value.Password=="aaram")
       this.authService.login(this.form.value.Username, this.form.value.Password).subscribe(data => {
-        localStorage.setItem('user', data);
+        localStorage.setItem('user', JSON.stringify(data));
         console.log('data',data)
         let token_type = data.token_type;
         let access_token = data.access_token;
@@ -54,10 +54,19 @@ export class LoginComponent implements OnInit {
 
       }, error => {
 
-        console.log('error',error);
+        console.log('error',JSON.stringify(error._body.status));
         this.loading=false;
         let e=JSON.parse(error._body);
         this.message=e.error_description
+
+        if(error._body.status=='0'){
+          this.message='Unabal to connect to server';
+
+        }
+        if(error.status=='500'){
+          this.message='Internal server error';
+
+        }
 
         setTimeout(() => {
           this.message='';

@@ -7,70 +7,66 @@
           <h2><b>Add Member</b></h2>
           <br>
 
-          
+
           <div *ngIf="successAlert" class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert" (click)="setAlertOff()" aria-hidden="true">&times;</button>
             <strong>{{message}}</strong>
           </div>
-          
+
           <div *ngIf="errorAlert" class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert"  (click)="setAlertOff()" aria-hidden="true">&times;</button>
-            <strong>{{message}}</strong> 
+            <button type="button" class="close" data-dismiss="alert" (click)="setAlertOff()" aria-hidden="true">&times;</button>
+            <strong>{{message}}</strong>
           </div>
-          
-          
+
+
 
           <label for="Parent_id" class="pull-left">Select Parent</label>
 
           <div class="input-group no-border">
 
-         
-            <select class="form-control" name="Parent_id" id="Parent_id" [(ngModel)]="member.Parent_id" >
-              <option [value]="item.id" *ngFor="let item of users" >{{item.displayName}}</option>
-           
+            <select class="form-control" name="Parent_id" id="Parent_id" [(ngModel)]="member.Parent_id">
+              <option [value]="item.id" *ngFor="let item of users">{{item.displayName}}</option>
+
             </select>
 
           </div>
           <label for="Name" class="pull-left">Name</label>
           <div class="input-group no-border">
-          
-            <input type="text" class="form-control" name="Name" id="Name"  [(ngModel)]="member.Name"
-              >
+
+            <input type="text" class="form-control" name="Name" id="Name" [(ngModel)]="member.Name">
           </div>
           <br>
           <label for="Email" class="pull-left">Email</label>
 
           <div class="input-group no-border">
-            <input type="email" class="form-control" name="Email" id="Email"  [(ngModel)]="member.Email"
-              >
+            <input type="email" class="form-control" name="Email" id="Email" [(ngModel)]="member.Email">
           </div>
           <br>
           <label for="PhoneNumber" class="pull-left">Phone Number</label>
 
           <div class="input-group no-border">
-              <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber"  [(ngModel)]="member.PhoneNumber"
-                >
-            </div>
-            <br>
+            <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" [(ngModel)]="member.PhoneNumber">
+          </div>
+          <br>
           <label for="Amount" class="pull-left">Amount</label>
 
           <div class="input-group no-border">
-           
-            <input type="text" class="form-control" name="BasicAmmount" id="Amount"  [(ngModel)]="member.BasicAmmount"
-              >
+
+            <input type="text" class="form-control" name="BasicAmmount" id="Amount" [(ngModel)]="member.BasicAmmount">
           </div>
           <br>
           <label class="pull-left">Password</label>
 
           <div class="input-group no-border">
-           
-            <input type="text" class="form-control" >
+
+            <input type="text" class="form-control" name="password" id="password" [(ngModel)]="member.Password">
           </div>
           <br>
           <br>
           <br>
           <div class="col-lg-12 col-md-6 col-sm-6 text-center">
-            <button [disabled]="f.invalid" type="submit" class="btn btn-white btn-round" style="background:#FFEA0D;color:black">Add member
+            <button [disabled]="f.invalid" type="submit" class="btn btn-white btn-round" style="background:#FFEA0D;color:black">Add
+              member
               <div class="ripple-container"></div>
               <div class="ripple-container"></div>
             </button>

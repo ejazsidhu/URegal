@@ -8,6 +8,7 @@ export class Member {
         public Name: string='' ,
         public Email: string ='',
         public BasicAmmount: number=0 ,
+        public Password:string=''
     ) {
 
 

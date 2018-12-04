@@ -21,9 +21,17 @@
   <div class="col-lg-6 col-md-6 col-sm-6 text-center" style="background:white;padding:100px;padding-top:30px;padding-bottom: 30px;">
     <h2><b>Wallet</b></h2>
     <br>
-  <div class="input-group no-border">
-    <input type="text" class="form-control" placeholder="To Address">
-  </div>
+ 
+    <label for="Parent_id" class="pull-left">Select Parent</label>
+
+    <div class="input-group no-border">
+
+      <select class="form-control" name="Parent_id" id="Parent_id">
+        <option [value]="item.id" *ngFor="let item of users">{{item.displayName}}</option>
+
+      </select>
+
+    </div>
   <br>
   <div class="input-group no-border">
     <input type="text" class="form-control" placeholder="Amount">

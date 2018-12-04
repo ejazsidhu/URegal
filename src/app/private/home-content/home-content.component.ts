@@ -14,6 +14,7 @@ export class HomeContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+      console.log('user', JSON.parse(localStorage.getItem('user')).userId);
     this.items = [
       {
           label: 'File',

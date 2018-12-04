@@ -10,22 +10,22 @@ export class PrivateService {
 
   constructor(private http: Http, private gHttpService: GeneralService) { }
 
-  getUsersTree() {
+  getUsersTree( currentUserId) {
   
       let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
       const option = new RequestOptions({ headers: httpOption });
-      var action = 'API/AccountAPI/getUserTreeLabel';
+      var action = 'API/AccountAPI/getUserTreeLabel?currentUserId='+currentUserId;
       let url = this.gHttpService.urlBuilder(action);
       return this.http.get(url, option).map(
         response => response.json()
       );
     }
 
-    getUsersTreeRefrel() {
+    getUsersTreeRefrel(currentUserId) {
   
       let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
       const option = new RequestOptions({ headers: httpOption });
-      var action = 'API/AccountAPI/getUserTree';
+      var action = 'API/AccountAPI/getUserTree?currentUserId='+currentUserId;
       let url = this.gHttpService.urlBuilder(action);
       return this.http.get(url, option).map(
         response => response.json()
