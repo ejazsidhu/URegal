@@ -36,7 +36,7 @@
     onSubmit(form) {
       if (form.valid) {
         console.log(form.value);
-        this.privateService.transferAmmount(this.userId, form.value.Parent_id, form.value.Ammount, form.value.Password).subscribe(data => {
+        this.privateService.transferAmmount(this.userId, form.value.Parent_id, form.value.BasicAmmount, form.value.Password).subscribe(data => {
           console.log(data);
           this.message = data.Message;
 
