@@ -81,6 +81,12 @@
           </a>
         </li>
         <li class="nav-item ">
+          <a class="nav-link" (click)="rbalc()">
+            <i class="material-icons">attach_money</i>
+            <p>Recharge Balance</p>
+          </a>
+        </li>
+        <li class="nav-item ">
           <a class="nav-link">
             <i class="material-icons">code</i>
             <p>Gold Codes</p>
@@ -110,12 +116,7 @@
             <p>Tools</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" (click)="rbalc()">
-            <i class="material-icons">build</i>
-            <p>Recharge Balance</p>
-          </a>
-        </li>
+        
 
         <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
@@ -209,9 +210,9 @@
   </div>
   </div>
 
-  <!-- <p-dialog header="Recharge Balance" [(visible)]=rbalance" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
+  <p-dialog header="Recharge Balance" [(visible)]="rbalance" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
     [minY]="70" [maximizable]="false" [baseZIndex]="10000">
-    <div class="form-group"><label class="bmd-label-floating">Amount</label><input class="form-control" disabled=""
+    <div class="form-group"><label class="bmd-label-floating">Amount</label><input class="form-control"
         type="text" value="Enter a Value" style="color:grey;"></div>
     <div class="text-center"><button class="btn  btn-round" type="submit">Submit <div class="ripple-container"></div>
         <div class="ripple-container"></div>
@@ -220,4 +221,4 @@
   <p-dialog header="Welcome" [(visible)]="promotion" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
     [minY]="70" [maximizable]="false" [baseZIndex]="10000">
     <img class="img-fluid" src="assets/img/coins.jpg">
-  </p-dialog> -->
+  </p-dialog>
