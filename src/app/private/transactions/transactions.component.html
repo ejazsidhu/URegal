@@ -15,11 +15,8 @@
               Name
             </th>
             <th>
-              Country
-            </th>
-            <th>
-              City
-            </th>
+Email            </th>
+           
             <th>
               Total Send 
             </th>
@@ -30,145 +27,29 @@
               Total Transaction 
             </th>
           </tr></thead>
-          <tbody>
-            <tr>
+          <tbody *ngIf=" allTransactions.length>0">
+            <tr *ngFor="let t of allTransactions;let i=index">
               <td>
-                1
+                {{i+1}}
               </td>
               <td>
-                Dakota Rice
+                {{t.name}}
               </td>
               <td>
-                Niger
+                {{t.email}}
               </td>
               <td>
-                Oud-Turnhout
+                {{t.totalSend |number}}
               </td>
               <td class="text-primary">
-                $36,738
+                {{t.totalReceived | number}}
               </td>
               <td class="text-primary">
-                $36,738
+                {{t.totalTransections |number}}
               </td>
-              <td class="text-primary">
-                $78,615
-              </td>
+              
             </tr>
-            <tr>
-              <td>
-                2
-              </td>
-              <td>
-                Minerva Hooper
-              </td>
-              <td>
-                Curaçao
-              </td>
-              <td>
-                Sinaai-Waas
-              </td>
-              <td class="text-primary">
-                $23,789
-              </td>
-              <td class="text-primary">
-                $23,789
-              </td>
-              <td class="text-primary">
-                $46,615
-              </td>
-            </tr>
-            <tr>
-              <td>
-                3
-              </td>
-              <td>
-                Sage Rodriguez
-              </td>
-              <td>
-                Netherlands
-              </td>
-              <td>
-                Baileux
-              </td>
-              <td class="text-primary">
-                $56,142
-              </td>
-              <td class="text-primary">
-                $56,142
-              </td>
-              <td class="text-primary">
-                $112,615
-              </td>
-            </tr>
-            <tr>
-              <td>
-                4
-              </td>
-              <td>
-                Philip Chaney
-              </td>
-              <td>
-                Korea, South
-              </td>
-              <td>
-                Overland Park
-              </td>
-              <td class="text-primary">
-                $38,735
-              </td>
-              <td class="text-primary">
-                $38,735
-              </td>
-              <td class="text-primary">
-                $76,615
-              </td>
-            </tr>
-            <tr>
-              <td>
-                5
-              </td>
-              <td>
-                Doris Greene
-              </td>
-              <td>
-                Malawi
-              </td>
-              <td>
-                Feldkirchen in Kärnten
-              </td>
-              <td class="text-primary">
-                $63,542
-              </td>
-              <td class="text-primary">
-                $63,542
-              </td>
-              <td class="text-primary">
-                $66,615
-              </td>
-            </tr>
-            <tr>
-              <td>
-                6
-              </td>
-              <td>
-                Mason Porter
-              </td>
-              <td>
-                Chile
-              </td>
-              <td>
-                Gloucester
-              </td>
-              <td class="text-primary">
-                $78,615
-              </td>
-              <td class="text-primary">
-                $78,615
-              </td>
-              <td class="text-primary">
-                $156,615
-              </td>
-            </tr>
+          
           </tbody>
         </table>
       </div>

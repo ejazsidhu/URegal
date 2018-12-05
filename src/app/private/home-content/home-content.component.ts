@@ -56,7 +56,7 @@ export class HomeContentComponent implements OnInit {
         this.pService.getBounes(userId).subscribe(data => {
             console.log("bounes", data);
             this.bounes = data.ResponseData.bonusBalance;
-            this.todayEarn=data.ResponseData.totalEarn;
+            this.todayEarn=data.ResponseData.todayEarn;
             this.totalEarn=data.ResponseData.totalEarn;
         }, error => { })
     }

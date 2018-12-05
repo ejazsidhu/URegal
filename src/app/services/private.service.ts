@@ -107,4 +107,15 @@ export class PrivateService {
       );
 
     }
+
+    getAlltransactions(){
+      let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
+      const option = new RequestOptions({ headers: httpOption });
+      var action = 'api/AccountAPI/getAllTransections';
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.get(url,option).map(
+        response => response.json()
+      );
+
+    }
 }
