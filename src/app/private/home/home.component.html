@@ -210,10 +210,27 @@
   </div>
   </div>
 
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+      
   <p-dialog header="Recharge Balance" [(visible)]="rbalance" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
     [minY]="70" [maximizable]="false" [baseZIndex]="10000">
-    <div class="form-group"><label class="bmd-label-floating">Amount</label><input class="form-control"
-        type="text" value="Enter a Value" style="color:grey;"></div>
+
+    <div class="form-group">
+        <div *ngIf="successAlert" class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" (click)="setAlertOff()" aria-hidden="true">&times;</button>
+            <strong>{{message}}</strong>
+          </div>
+      
+          <div *ngIf="errorAlert" class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" (click)="setAlertOff()" aria-hidden="true">&times;</button>
+            <strong>{{message}}</strong>
+          </div>
+    </div>
+    <div class="form-group">
+      <label class="bmd-label-floating">Amount</label>
+      <input class="form-control" name="Amount" #Amount ngModel type="text" value="Enter a Value" style="color:grey;" >
+    </div>
     <div class="text-center"><button class="btn  btn-round" type="submit">Submit <div class="ripple-container"></div>
         <div class="ripple-container"></div>
       </button></div>
@@ -222,3 +239,5 @@
     [minY]="70" [maximizable]="false" [baseZIndex]="10000">
     <img class="img-fluid" src="assets/img/coins.jpg">
   </p-dialog>
+
+</form>

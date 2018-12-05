@@ -95,4 +95,16 @@ export class PrivateService {
       );
 
     }
+
+    rechargeBalance(currentUserId,amount){
+
+      let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
+      const option = new RequestOptions({ headers: httpOption });
+      var action = 'api/AccountAPI/rechargeBalance?currentUserId='+currentUserId+'&amount='+amount;
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.get(url,option).map(
+        response => response.json()
+      );
+
+    }
 }
