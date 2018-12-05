@@ -7,12 +7,12 @@ import { PrivateService } from 'src/app/services/private.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  verifymail: boolean = false;
-  promotion: boolean = false;
-  userId: any = 0;
-  rank: any = '';
-  vmail() {
-    this.verifymail = true;
+  rbalance: boolean = false;
+  promotion:boolean = false;
+  userId: any=0;
+  rank: any='';
+  rbalc() {
+      this.rbalance = true;
   }
   propop() {
     this.promotion = true;
