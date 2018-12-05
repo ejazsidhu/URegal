@@ -16,6 +16,7 @@
     successAlert: boolean = false;
     errorAlert: boolean = false;
     loading: boolean = false;
+    bounes: any=0;
 
     constructor(private privateService: PrivateService) {
       this.member = new Member();
@@ -55,4 +56,12 @@
         });
       }
     }
+
+    getBounes(userId) {
+      this.privateService.getBounes(userId).subscribe(data => {
+          console.log("bounes", data);
+          this.bounes = data.ResponseData.bonusBalance;
+       
+      }, error => { })
+  }
   }

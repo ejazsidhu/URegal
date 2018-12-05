@@ -12,6 +12,9 @@ export class HomeContentComponent implements OnInit {
     items: MenuItem[];
     userId: any;
     bounes = 0;
+    todayEarn: any=0;
+    totalEarn: any=0;
+    rank: any;
 
 
     constructor(private pService: PrivateService) { }
@@ -21,6 +24,7 @@ export class HomeContentComponent implements OnInit {
         this.userId = JSON.parse(localStorage.getItem('user')).userId;
 
         this.getBounes(this.userId);
+    
         this.items = [
             {
                 label: 'File',
@@ -52,7 +56,11 @@ export class HomeContentComponent implements OnInit {
         this.pService.getBounes(userId).subscribe(data => {
             console.log("bounes", data);
             this.bounes = data.ResponseData.bonusBalance;
+            this.todayEarn=data.ResponseData.totalEarn;
+            this.totalEarn=data.ResponseData.totalEarn;
         }, error => { })
     }
+
+    
 
 }

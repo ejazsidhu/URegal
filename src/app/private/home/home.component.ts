@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrivateService } from 'src/app/services/private.service';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   verifymail: boolean = false;
-  promotion:boolean = false;
+  promotion: boolean = false;
+  userId: any = 0;
+  rank: any = '';
   vmail() {
-      this.verifymail = true;
+    this.verifymail = true;
   }
   propop() {
     this.promotion = true;
-}
-  constructor() { }
+  }
+  constructor(private privateService: PrivateService) { }
 
   ngOnInit() {
+
+
+    this.userId = JSON.parse(localStorage.getItem('user')).userId;
+
+    this.getRank(this.userId);
     this.propop();
+  }
+
+  getRank(userId) {
+
+    this.privateService.getRank(userId).subscribe(data => {
+      console.log(data);
+      this.rank = data.ResponseData.rank;
+    }, error => { })
+
   }
 
 }
