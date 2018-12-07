@@ -57,13 +57,13 @@
             <li>
               <a class="dropdown-item" routerLink="/home/network/refreal">
                 <i class="material-icons">share</i>
-                <p>Refreal</p>
+                <p>Network Tree</p>
               </a>
             </li>
             <li>
               <a class="dropdown-item" routerLink="/home/network/network-tree">
                 <i class="material-icons">more_vert</i>
-                <p>Network Tree</p>
+                <p>Refreal</p>
               </a>
             </li>
             <li>
@@ -80,7 +80,7 @@
             <p>Wallet</p>
           </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item " *ngIf="role && role == 'Admin'">
           <a class="nav-link" (click)="rbalc()">
             <i class="material-icons">attach_money</i>
             <p>Recharge Balance</p>
@@ -141,7 +141,7 @@
           <span class="navbar-toggler-icon icon-bar"></span>
           <span class="navbar-toggler-icon icon-bar"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-center">
+        <!-- <div class="collapse navbar-collapse justify-content-center">
           <div class="row pull-center">
             <p> BTC 6890123$  </p>
             <br>
@@ -152,7 +152,7 @@
             <p> ETH 8890123$  </p>
           </div>
 
-        </div>
+        </div> -->
         <div class="collapse navbar-collapse justify-content-end">
           <!--<form class="navbar-form">
               <div class="input-group no-border">

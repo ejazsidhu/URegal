@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   successAlert: boolean = false;
   errorAlert: boolean = false;
   loading: boolean = false;
+  role: any;
   rbalc() {
     this.rbalance = true;
   }
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit {
 
 
     this.userId = JSON.parse(localStorage.getItem('user')).userId;
-
+    this.role = JSON.parse(localStorage.getItem('user')).role;
+    console.log(this.userId);
     this.getRank(this.userId);
     this.propop();
   }
