@@ -15,6 +15,7 @@ export class HomeContentComponent implements OnInit {
     todayEarn: any=0;
     totalEarn: any=0;
     rank: any;
+    dashboardData: any=[];
 
 
     constructor(private pService: PrivateService) { }
@@ -24,6 +25,7 @@ export class HomeContentComponent implements OnInit {
         this.userId = JSON.parse(localStorage.getItem('user')).userId;
 
         this.getBounes(this.userId);
+        this.getDashboardData(this.userId);
     
         this.items = [
             {
@@ -59,6 +61,17 @@ export class HomeContentComponent implements OnInit {
             this.todayEarn=data.ResponseData.todayEarn;
             this.totalEarn=data.ResponseData.totalEarn;
         }, error => { })
+    }
+
+
+    getDashboardData(userId){
+        this.pService.getDashboardData(userId).subscribe(
+            data=>{
+                this.dashboardData=data.ResponseData;
+                console.log(this.dashboardData)
+            }
+        )
+
     }
 
     

@@ -32,6 +32,17 @@ export class PrivateService {
       );
     }
 
+    getDashboardData( currentUserId) {
+  
+      let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
+      const option = new RequestOptions({ headers: httpOption });
+      var action = 'API/AccountAPI/TotalNodeAndSalesCount?currentUserId='+currentUserId;
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.get(url, option).map(
+        response => response.json()
+      );
+    }
+
     getRank( currentUserId) {
   
       let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey'));
