@@ -5,9 +5,14 @@
         <div class="card-icon data-widget-black">
           <i class="material-icons">gesture</i>
         </div>
-        <p class="card-category">Bonus Balance</p>
-        <h3 class="card-title">{{bounes|number}}
-        </h3>
+        <span *ngIf="role=='none'">
+          <p class="card-category">Bonus Balance</p>
+          <h3 class="card-title">{{bounes.bonusBalance|number}}</h3>
+        </span>
+        <span *ngIf="role=='Admin'">
+          <p class="card-category">Basic Balance</p>
+          <h3 class="card-title">{{bounes.basicBalance|number}}</h3>
+        </span>
       </div>
       <div class="card-footer">
         <div class="stats">
@@ -48,7 +53,7 @@
       </div>
       <br>
       <div class="input-group no-border">
-        <input type="text" class="form-control" placeholder="Password" name="Password" required [(ngModel)]="member.Password">
+        <input type="password" class="form-control" placeholder="Password" name="Password" required [(ngModel)]="member.Password">
       </div>
       <br>
       <br>
