@@ -17,14 +17,17 @@
     errorAlert: boolean = false;
     loading: boolean = false;
     bounes: any=0;
+    role: any;
 
     constructor(private privateService: PrivateService) {
       this.member = new Member();
       this.userId = JSON.parse(localStorage.getItem('user')).userId;
+      this.role = JSON.parse(localStorage.getItem('user')).role;
     }
 
     ngOnInit() {
       this.getUsers();
+      this.getBounes(this.userId);
     }
 
     getUsers() {
@@ -45,6 +48,7 @@
           if (data.Success) {
             this.form.reset();
             this.successAlert = true
+            this.getBounes(this.userId)
           }
           else {
             this.errorAlert = true
@@ -60,7 +64,7 @@
     getBounes(userId) {
       this.privateService.getBounes(userId).subscribe(data => {
           console.log("bounes", data);
-          this.bounes = data.ResponseData.bonusBalance;
+          this.bounes = data.ResponseData;
        
       }, error => { })
   }
