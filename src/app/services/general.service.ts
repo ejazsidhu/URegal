@@ -10,7 +10,7 @@ export class GeneralService {
   public ip: string;
   public port: string;
   constructor(private http: HttpClient) {
-    this.ip = 'http://api.aaramgold.com';
+    this.ip = 'https://api.aaramgold.com';
     this.port = '';
 
     // this.ip = 'localhost';
