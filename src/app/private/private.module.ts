@@ -13,7 +13,7 @@ import { RefrealComponent } from './network/refreal/refreal.component';
 import { NetworkTreeComponent } from './network/network-tree/network-tree.component';
 import { TeamTreeComponent } from './network/team-tree/team-tree.component';
 import { NetworkComponent } from './network/network.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MenubarModule} from 'primeng/menubar';
 // import { MenuItem} from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
@@ -30,8 +30,8 @@ import { FormsModule } from '@angular/forms';
     DialogModule,
     TreeModule,
     OrgChartModule,
-    FormsModule
-    
+    FormsModule,
+    Ng2SearchPipeModule
     ],
   declarations: [HomeComponent, HomeContentComponent, SettingsComponent, WalletComponent, RegalCodesComponent, TransactionsComponent, MembersComponent, RefrealComponent, NetworkTreeComponent, TeamTreeComponent, NetworkComponent, VisaCardComponent, AddMemberComponent]
 })

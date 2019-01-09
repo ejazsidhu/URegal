@@ -8,7 +8,7 @@ import { PrivateService } from 'src/app/services/private.service';
 })
 export class MembersComponent implements OnInit {
   users: any=[];
-
+  filter:any;
   constructor(private privateService:PrivateService) { }
 
   ngOnInit() {
