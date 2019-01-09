@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
   promotion: boolean = false;
   userId: any = 0;
   rank: any = '';
+  changepwd: boolean = false;
   @ViewChild('f') form: any;
+  @ViewChild('c') formc: any;
   message: any = '';
   successAlert: boolean = false;
   errorAlert: boolean = false;
@@ -27,6 +29,9 @@ export class HomeComponent implements OnInit {
   }
   propop() {
     this.promotion = true;
+  }
+  changepassword() {
+    this.changepwd = true;
   }
   constructor(private privateService: PrivateService) { }
 
@@ -71,6 +76,28 @@ export class HomeComponent implements OnInit {
 
     })
 
+  }
+  onSubmitc(formc) {
+    console.log(formc.value);
+    if (formc.valid) {
+    this.privateService.ChangePassword(this.userId, formc.value).subscribe(data => {
+
+      console.log(data);
+      this.message = data.Message;
+
+      // this.successAlert = true;
+      if (data.Success) {
+        this.formc.reset();
+        this.successAlert = true
+      }
+      else {
+        this.errorAlert = true
+      }
+      this.loading = false;
+    }, error => {
+
+    })
+  }
   }
 
 }

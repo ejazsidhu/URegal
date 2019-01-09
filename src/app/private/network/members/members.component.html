@@ -11,6 +11,7 @@
       <div class="card-header">
         <h4 class="card-title ">User Member</h4>
         <p class="card-category"> Here is a subtitle for this table</p>
+        <input class="form-control" type="text" name="filter" [(ngModel)]="filter" placeholder="Search">
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -35,7 +36,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let user of users;let i=index">
+                
+              <tr *ngFor="let user of users | filter:filter; let i=index">
                 <!-- {{user |json}} -->
                 <td>
                   {{i+1}}

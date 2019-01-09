@@ -129,4 +129,13 @@ export class PrivateService {
       );
 
     }
+    ChangePassword(currentUserId,body){
+      // let httpOption = this.gHttpService.headerCTJsontoken(localStorage.getItem('tokenKey')); 
+      // const option = new RequestOptions({ headers: httpOption });
+      var action = 'api/AccountAPI/ChangePassword?userId='+currentUserId;
+      let url = this.gHttpService.urlBuilder(action);
+      return this.http.post(url,body).map(
+        response => response.json()
+      );
+    }
 }
