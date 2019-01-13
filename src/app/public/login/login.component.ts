@@ -48,7 +48,11 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('tokenKey', tokenKey);
         // console.log(data)
         this.router.navigateByUrl('/home');
+
+        setTimeout(() => {
         this.loading = false
+          
+        }, 10000);
 
 
       }, error => {
